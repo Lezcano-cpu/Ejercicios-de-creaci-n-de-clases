@@ -1,0 +1,59 @@
+class Estudiante:
+    def __init__(self, nombre, edad, carrera):
+        """Inicializa las propiedades del estudiante."""
+        self.nombre = nombre      # Establece el nombre
+        self.edad = edad          # Establece la edad
+        self.carrera = carrera    # Establece la carrera
+
+    def obtener_nombre(self):
+        """Devuelve el nombre."""
+        return self.nombre
+
+    def establecer_nombre(self, nombre):
+        """Establece un nuevo nombre."""
+        self.nombre = nombre
+
+    def obtener_edad(self):
+        """Devuelve la edad."""
+        return self.edad
+
+    def establecer_edad(self, edad):
+        """Establece una nueva edad."""
+        self.edad = edad
+
+    def obtener_carrera(self):
+        """Devuelve la carrera."""
+        return self.carrera
+
+    def establecer_carrera(self, carrera):
+        """Establece una nueva carrera."""
+        self.carrera = carrera
+
+    def calcular_nota_media(self, notas):
+        """Calcula la nota media de un conjunto de exámenes."""
+        if len(notas) == 0:
+            return 0
+        return sum(notas) / len(notas)
+
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    estudiante1 = Estudiante("Ana", 20, "Ingeniería")
+
+    print(f"Nombre: {estudiante1.obtener_nombre()}")
+    print(f"Edad: {estudiante1.obtener_edad()}")
+    print(f"Carrera: {estudiante1.obtener_carrera()}")
+
+    # Calcular promedio
+    notas = [8, 7.5, 9, 6]
+    print(f"Nota media: {estudiante1.calcular_nota_media(notas):.2f}")
+
+    # Modificar datos
+    estudiante1.establecer_nombre("María")
+    estudiante1.establecer_edad(21)
+    estudiante1.establecer_carrera("Medicina")
+
+    print("\nDespués de actualizar:")
+    print(f"Nombre: {estudiante1.obtener_nombre()}")
+    print(f"Edad: {estudiante1.obtener_edad()}")
+    print(f"Carrera: {estudiante1.obtener_carrera()}")
