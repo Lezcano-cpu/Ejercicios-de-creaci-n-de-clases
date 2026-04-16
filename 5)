@@ -1,0 +1,49 @@
+import math
+
+class Circulo:
+    def __init__(self, radio):
+        """Inicializa las propiedades del círculo."""
+        self.radio = radio              
+        self.diametro = radio * 2       
+
+    def obtener_radio(self):
+        """Devuelve el radio."""
+        return self.radio
+
+    def establecer_radio(self, radio):
+        """Establece un nuevo radio."""
+        self.radio = radio
+        self.diametro = radio * 2  # Actualiza el diámetro automáticamente
+
+    def obtener_diametro(self):
+        return self.diametro
+
+    def calcular_area(self):
+        return math.pi * (self.radio ** 2)
+
+    def calcular_circunferencia(self):
+        return 2 * math.pi * self.radio
+
+
+
+if __name__ == "__main__":
+    circulo1 = Circulo(3)
+
+    print(f"Radio: {circulo1.obtener_radio()}")
+    print(f"Diámetro: {circulo1.obtener_diametro()}")
+    print(f"Área: {circulo1.calcular_area():.2f}")
+    print(f"Circunferencia: {circulo1.calcular_circunferencia():.2f}")
+
+    # Modificar radio
+    circulo1.establecer_radio(5)
+
+    print("\nDespués de actualizar:")
+    print(f"Radio: {circulo1.obtener_radio()}")
+    print(f"Diámetro: {circulo1.obtener_diametro()}")
+    print(f"Área: {circulo1.calcular_area():.2f}")
+
+
+
+
+    
+    print(f"Circunferencia: {circulo1.calcular_circunferencia():.2f}")
