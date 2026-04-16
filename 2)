@@ -1,0 +1,67 @@
+class Coche:
+    def __init__(self, marca, modelo, anio):
+        """Inicializa las propiedades del coche."""
+        self.marca = marca    
+        self.modelo = modelo  
+        self.anio = anio      
+
+    def obtener_marca(self):
+        """Devuelve la marca del coche."""
+        return self.marca
+
+    def establecer_marca(self, marca):
+        """Establece una nueva marca para el coche."""
+        self.marca = marca
+
+    def obtener_modelo(self):
+        """Devuelve el modelo del coche."""
+        return self.modelo
+
+    def establecer_modelo(self, modelo):
+        """Establece un nuevo modelo para el coche."""
+        self.modelo = modelo
+
+    def obtener_anio(self):
+        """Devuelve el año de fabricación."""
+        return self.anio
+
+    def establecer_anio(self, anio):
+        """Establece un nuevo año de fabricación."""
+        self.anio = anio
+
+    def calcular_antiguedad(self):
+        """Calcula cuántos años han pasado desde su fabricación."""
+        from datetime import datetime
+        anio_actual = datetime.now().year
+        return anio_actual - self.anio
+
+
+# Ejemplo de uso de la clase Coche
+if __name__ == "__main__":
+    # Crear una instancia de Coche
+    coche1 = Coche("Toyota", "Corolla", 2015)
+
+    # Obtener y mostrar las propiedades
+    print(f"Marca: {coche1.obtener_marca()}")
+    print(f"Modelo: {coche1.obtener_modelo()}")
+    print(f"Año: {coche1.obtener_anio()}")
+
+    # Mostrar antigüedad
+    print(f"Años desde fabricación: {coche1.calcular_antiguedad()}")
+
+    # Establecer nuevas propiedades
+    coche1.establecer_marca("Ford")
+    coche1.establecer_modelo("Focus")
+    coche1.establecer_anio(2018)
+    
+    coche1.establecer_marca("Volkswagen")
+    coche1.establecer_modelo(" T-Cross")
+    coche1.establecer_anio(2019)
+
+
+    # Mostrar las propiedades actualizadas
+    print("\nDespués de actualizar:")
+    print(f"Marca: {coche1.obtener_marca()}")
+    print(f"Modelo: {coche1.obtener_modelo()}")
+    print(f"Año: {coche1.obtener_anio()}")
+    print(f"Años desde fabricación: {coche1.calcular_antiguedad()}")
